@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agentic AI RAG Chatbot</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
-  <h2>Agentic AI RAG Chatbot</h2>
-
-  <input id="userInput" placeholder="Ask a question..." />
-  <button onclick="send()">Send</button>
-
-  <p id="response"></p>
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="header-content">
+        <div class="bot-avatar">🤖</div>
+        <div class="header-text">
+          <h1>Agentic AI RAG Chatbot</h1>
+          <p class="status">Online</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot-message">
+        <div class="message-avatar">🤖</div>
+        <div class="message-content">
+          <p>Hello! I'm your AI assistant powered by Agentic RAG. Ask me anything about AI, RAG, FAISS, LangChain, or Agentic AI systems!</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-input-container">
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="Type your message here..." 
+          onkeydown="handleKeyPress(event)"
+        />
+        <button id="sendButton" onclick="send()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="/static/script.js"></script>
 </body>
